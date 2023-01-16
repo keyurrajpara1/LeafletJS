@@ -88,6 +88,17 @@
 	}).addTo(map);
 
 
+	// Raster Layers
+	// TileLayer.WMS
+	// WMS - Web Map Service
+	var nexrad = L.tileLayer.wms("http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi", {
+	    layers: 'nexrad-n0r-900913',
+	    format: 'image/png',
+	    transparent: true,
+	    attribution: "Weather data © 2012 IEM Nexrad"
+	});
+
+
 	// Layers control
 	var baseMaps = {
 		openStreetMap,
@@ -99,7 +110,8 @@
 		marker2,
 		pointData,
 		lineData,
-		polygonData
+		polygonData,
+		nexrad
 	};
 	var layerControlOptions = {
 		collapsed: false
